@@ -13,13 +13,14 @@ class Item:
         Item.all.append(self)
 
     def calculate_total_price(self):
-        return  print(self.price * self.quantity)
+        return  self.price * self.quantity
 
     def apply_discount(self):
         self.price = self.price * self.pay_rate
 
     def __repr__(self) -> str:
         return f"Item('{self.name}','{self.price}','{self.quantity}')"
+
 
 
 item1 = Item("Phone", 100, 1)
