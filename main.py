@@ -1,5 +1,4 @@
 import csv
-from unicodedata import name
 
 class Item:
     pay_rate = 0.8
@@ -34,7 +33,6 @@ class Item:
                 price=float(i.get('price')),
                 quantity=float(i.get('quantity'))
             )
-            print(name,price,quantity)
 
             
             
@@ -48,8 +46,8 @@ class Item:
             return False
 
 
-    # def __repr__(self) -> str:
-    #     return f"Item('{self.name}','{self.price}','{self.quantity}')"
+    def __repr__(self) -> str:
+        return f"Item('{self.name}','{self.price}','{self.quantity}')"
     
 Item.instantiate_from_csv()
 print(Item.all)
