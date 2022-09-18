@@ -11,7 +11,8 @@ class Item:
         self.name = name
         self.price = price
         self.quantity = quantity
-
+        
+        price('hi')
         Item.all.append(self)
 
     def calculate_total_price(self):
@@ -26,7 +27,7 @@ class Item:
             reader = csv.DictReader(file)
             items  = list(reader)
             
-        
+            
         for i in items:
             Item(
                 name = i.get('name'),
@@ -34,8 +35,7 @@ class Item:
                 quantity=float(i.get('quantity'))
             )
 
-            
-            
+        
     @staticmethod
     def is_int(num):
         if isinstance(num,float):
@@ -48,4 +48,4 @@ class Item:
 
     def __repr__(self) -> str:
         return f"Item('{self.name}','{self.price}','{self.quantity}')"
-    
+
